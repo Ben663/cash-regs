@@ -14,7 +14,7 @@
     <link href="{{ asset('../css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container" style="width: 65%">
     <div class="row">
          <?php
             $query = "SELECT * FROM demo.cash_mashin ORDER BY id ASC ";
@@ -31,9 +31,13 @@
                             <div class="product">
                                 <h5 class="text-info"><?php echo $row["name"]; ?></h5>
                                 <h5 class="text-danger"><?php echo $row["price"]; ?></h5>
-                                <input type="text" name="quantity" class="form-control" value="1">
+                                <h5 class="text-danger"><?php echo $row["discount"]; ?></h5>
+                                <h5 class="text-danger"><?php echo $row["favorite"]; ?></h5>
+                                <input type="number" name="quantity" class="form-control" value="1">
                                 <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
                                 <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
+                                <input type="hidden" name="hidden_price" value="<?php echo $row["discount"]; ?>">
+                                <input type="hidden" name="hidden_price" value="<?php echo $row["favorite"]; ?>">
                                 <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success"
                                        value="Add to Cart">
                             </div>

@@ -1,58 +1,55 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
-use App\Models\Product;
-
+use App\Models\Product; 
+ 
 class ProductsController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-        return view('products', compact('products'));
+        $cash_mashin = Product::all();
+        return view('cart')->with('cash_mashin', $cash_mashin);
     }
-
+ 
     public function cart()
     {
         return view('cart');
     }
     public function addToCart($id)
     {
-        $product = Product::findOrFail($id);
-
+        $cash_mashin = Product::findOrFail($id);
         $cart = session()->get('cart', []);
-
-        if (isset($cart[$id])) {
+        if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
-        } else {
+        }  else {
             $cart[$id] = [
-                "product_name" => $product->product_name,
-                "photo" => $product->photo,
-                "price" => $product->price,
-                "quantity" => 1
+                "product_name" => $cash_mashin->name,
+                "price" => $cash_mashin->price,
+                "quantity" => 1,
+                "discount" =>$cash_mashin->discount,
             ];
         }
-
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product add to cart successfully!');
+        return redirect()->with('success', 'Product add to cart successfully!');
     }
-
+ 
     public function update(Request $request)
     {
-        if ($request->id && $request->quantity) {
+        if($request->id && $request->quantity){
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
             session()->flash('success', 'Cart successfully updated!');
         }
     }
-
+ 
     public function remove(Request $request)
     {
-        if ($request->id) {
+        if($request->id) {
             $cart = session()->get('cart');
-            if (isset($cart[$request->id])) {
+            if(isset($cart[$request->id])) {
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }

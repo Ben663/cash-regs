@@ -10,6 +10,7 @@ body {
     border: 0px;
     margin: 10px 0px;
     box-shadow: none !important;
+    align-items: center;
 }
 .dropdown .dropdown-menu {
     padding: 20px;
@@ -26,11 +27,6 @@ body {
 }
 .cart-detail {
     padding: 15px 0px;
-}
-.cart-detail-img img {
-    width: 100%;
-    height: 100%;
-    padding-left: 15px;
 }
 .cart-detail-product p {
     margin: 0px;
@@ -67,30 +63,4 @@ body {
     height: 100%;
     overflow: hidden;
 }
-.product {
-    border: 1px solid #eaeaec;
-    margin: -1px 19px 3px -1px;
-    padding: 10px;
-    text-align: center;
-    background-color: #efefef;
-}
-table,
-th,
-tr {
-    text-align: center;
-}
-.title2 {
-    text-align: center;
-    color: #66afe9;
-    background-color: #efefef;
-    padding: 2%;
-}
-h2 {
-    text-align: center;
-    color: #66afe9;
-    background-color: #efefef;
-    padding: 2%;
-}
-table th {
-    background-color: #efefef;
-}
+

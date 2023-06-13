@@ -19,4 +19,4 @@ for the vscode after downloade u can run
 3. GO TO : http://localhost:8000
 </p>
 
-![image](https://github.com/Ben663/cash-regs/assets/87435130/d1f2daac-23ae-492c-b36d-edd035e0febd)
+![Untitled](https://github.com/Ben663/cash-regs/assets/87435130/3b78e98f-2673-43e6-890d-8c756fcf6d9b)
